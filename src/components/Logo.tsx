@@ -1,8 +1,11 @@
 import { useId } from 'react'
+import { asset } from '../asset'
 
 type LogoProps = {
   className?: string
 }
+
+const brandRing = asset('brand-ring.png')
 
 const ring = {
   y: 2.78425,
@@ -28,8 +31,8 @@ export default function Logo({ className }: LogoProps) {
           <circle cx="161.927" cy={ring.cy} r={ring.r} fill="#fff" />
         </mask>
       </defs>
-      <image href="/brand-ring.png" x="-6.363" y={ring.y} width={ring.width} height={ring.height} mask={`url(#${first})`} />
-      <image href="/brand-ring.png" x="143.656" y={ring.y} width={ring.width} height={ring.height} mask={`url(#${second})`} />
+      <image href={brandRing} x="-6.363" y={ring.y} width={ring.width} height={ring.height} mask={`url(#${first})`} />
+      <image href={brandRing} x="143.656" y={ring.y} width={ring.width} height={ring.height} mask={`url(#${second})`} />
       <g fill="currentColor">
         <path d="M 18.504 30.937 L 18.471 36.03 C 18.471 38.161 17.651 39.923 16.599 41.055 C 15.546 42.187 13.885 42.753 11.613 42.753 C 10.89 42.753 10.198 42.711 9.541 42.628 C 8.882 42.544 8.283 42.362 7.739 42.079 C 7.196 41.796 6.727 41.404 6.332 40.904 C 5.965 40.438 5.738 40.094 5.539 39.413 H -0.074 C 0.107 40.691 0.518 41.85 1.15 42.752 C 1.874 43.783 2.771 44.616 3.84 45.25 C 4.908 45.882 6.093 46.332 7.394 46.599 C 8.693 46.865 9.986 46.998 11.268 46.998 C 15.315 46.998 18.416 46.041 20.571 44.126 C 22.727 42.21 23.804 39.304 23.804 35.408 V 21.937 C 23.425 25.68 21.413 28.927 18.504 30.937 Z" />
         <path fillRule="evenodd" d="M 27.4163 21.3402 A 11.908 11.908 0 1 0 51.2323 21.3402 A 11.908 11.908 0 1 0 27.4163 21.3402 Z M 30.7483 21.3402 A 8.576 8.576 0 1 1 47.9003 21.3402 A 8.576 8.576 0 1 1 30.7483 21.3402 Z" />

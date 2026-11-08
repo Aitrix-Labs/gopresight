@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react'
+import FormSelect from '../components/FormSelect'
 
 const banner = 'https://www.presight.ai/hubfs/Presight_2026/Images/invest-presight-banner-1-1-1.png'
 const photo = 'https://www.presight.ai/hubfs/Presight_2026/Images/Rectangle%2040180%20%2843%29.jpg'
@@ -134,28 +135,20 @@ export default function ContactPage() {
                   <input name="phone" type="tel" placeholder="Phone number" required />
                 </span>
               </label>
-              <label className="span-2">
-                Country*
-                <select name="country" defaultValue="" required>
-                  <option value="" disabled>
-                    Please Select
-                  </option>
-                  {countries.map((country) => (
-                    <option key={country}>{country}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="span-2">
-                Reason For Contact*
-                <select name="reason" defaultValue="" required>
-                  <option value="" disabled>
-                    Please Select
-                  </option>
-                  {reasons.map((reason) => (
-                    <option key={reason}>{reason}</option>
-                  ))}
-                </select>
-              </label>
+              <FormSelect
+                className="span-2"
+                name="country"
+                label="Country*"
+                options={countries}
+                required
+              />
+              <FormSelect
+                className="span-2"
+                name="reason"
+                label="Reason For Contact*"
+                options={reasons}
+                required
+              />
               <label className="span-2">
                 Message
                 <textarea name="message" rows={4} placeholder="Leave us a message..." />

@@ -96,7 +96,6 @@ h2 {
   height: 90px;
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  transform: translateY(0);
   transition: transform 0.4s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 .site-header.is-away {
@@ -1080,6 +1079,86 @@ h2 {
   padding: 0 22px;
   height: 60px;
   outline: none;
+}
+.touch-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23404040' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  background-size: 12px 8px;
+  padding-right: 48px;
+  cursor: pointer;
+}
+.touch-form select:invalid {
+  color: #8ea394;
+}
+.touch-form select option {
+  color: #404040;
+}
+.form-select {
+  position: relative;
+  width: 100%;
+}
+.form-select__native {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.form-select__trigger {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #fff;
+  border-radius: 45px;
+  background: rgba(255, 255, 255, 0.8)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23404040' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 22px center / 12px 8px;
+  color: #404040;
+  font: inherit;
+  text-align: left;
+  padding: 0 48px 0 22px;
+  cursor: pointer;
+}
+.form-select__trigger.is-placeholder {
+  color: #8ea394;
+}
+.form-select.is-open .form-select__trigger {
+  border-color: #c9d7e8;
+}
+.form-select__list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  margin: 0;
+  padding: 8px 0;
+  max-height: 240px;
+  overflow: auto;
+  list-style: none;
+  border: 1px solid #d7dee8;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(27, 50, 89, 0.12);
+}
+.form-select__list button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #404040;
+  font: inherit;
+  text-align: left;
+  padding: 10px 22px;
+  cursor: pointer;
+}
+.form-select__list button:hover,
+.form-select__list button.is-active {
+  background: #eef3f8;
 }
 .touch-form textarea {
   height: 100px;
